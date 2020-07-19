@@ -80,5 +80,5 @@ def lose_life(lives):
 	# enlève une vie si besoin
 
 
-
-print(generation_word())
+word_validation(generation_word())
+print(word_to_find)
