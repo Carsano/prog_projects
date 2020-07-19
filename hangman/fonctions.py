@@ -14,16 +14,14 @@ def generation_word():
 def word_validation(word):
 	data.word_to_find = word
 
-# Validated
 
-def letter_check(letter, word):
-	# check la lettre dans le mot
-	# return True si lettre dans le mot, False sinon
-	if letter in word.split():
+def letter_check(letter):
+	if letter in data.word_to_find:
 		return letter, True
 	else:
 		return letter, False
 
+# Validated
 def ask_letter():
 	# demande à l'utilisateur de rentrer une lettre
 	# check si la lettre peut être rentrée
@@ -82,4 +80,3 @@ def lose_life(lives):
 
 
 word_validation(generation_word())
-print(data.word_to_find)
