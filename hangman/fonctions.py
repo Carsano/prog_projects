@@ -1,19 +1,20 @@
 #!/usr/bin/python3.8
 
 # -*-coding:UTF-8 -*
-from data import *
+import data
 
 
 import random
 
 
 def generation_word():
-	word = random.choice(word_dictionnary)
+	word = random.choice(data.word_dictionnary)
 	return word
 
 def word_validation(word):
-	word_to_find = word
+	data.word_to_find = word
 
+# Validated
 
 def letter_check(letter, word):
 	# check la lettre dans le mot
@@ -81,4 +82,4 @@ def lose_life(lives):
 
 
 word_validation(generation_word())
-print(word_to_find)
+print(data.word_to_find)
