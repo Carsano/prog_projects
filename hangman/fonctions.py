@@ -1,23 +1,21 @@
 #!/usr/bin/python3.8
 
 # -*-coding:UTF-8 -*
-from datas import *
+from data import *
+
 
 import random
 
 
 def generation_word():
-	# Va chercher dans le fichier données un mot aléatoire
-	#return le mot
 	word = random.choice(word_dictionnary)
 	return word
-	# validée
 
 def word_validation(word):
-	datas.word = word
+	word_to_find = word
 
 
-def letter_check(letter,word=word):
+def letter_check(letter, word):
 	# check la lettre dans le mot
 	# return True si lettre dans le mot, False sinon
 	if letter in word.split():
@@ -68,7 +66,7 @@ def send_letter_good_false(letter, boolean):
 	# ouvre ou crée fichier scores
 	# enregistre son nom avec le score 0
 
-def lose_life(lives=lives):
+def lose_life(lives):
 	lives -= 1
 	return lives
 
@@ -82,5 +80,5 @@ def lose_life(lives=lives):
 	# enlève une vie si besoin
 
 
-word_validation(generation_word())
-print(word)
+
+print(generation_word())
