@@ -52,10 +52,10 @@ def send_letter_good_false(letter_booelan):
 	else:
 		data.false_letters.append(letter_booelan[0])
 
-# Validated
 def save_letter(letter):
 	send_letter_good_false(letter_check(letter))
 
+# Validated
 
 #def nom_joueur():
 	# demande le nom du joueur 
@@ -65,9 +65,9 @@ def save_letter(letter):
 	# ouvre ou crée fichier scores
 	# enregistre son nom avec le score 0
 
-def lose_life(lives):
-	lives -= 1
-	return lives
+def lose_life():
+	data.lives -= 1
+	return data.lives
 
 
 #def tour():
