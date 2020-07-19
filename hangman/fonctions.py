@@ -21,40 +21,37 @@ def letter_check(letter):
 	else:
 		return letter, False
 
-# Validated
 def ask_letter():
-	# demande à l'utilisateur de rentrer une lettre
-	# check si la lettre peut être rentrée
-	# return la lettre
-	letter = input("Please choose a letter: ")
-	can_paly = False
-	while can_play == False:
-		can_play = can_play_letter(letter)
+	can_play = False
+	while not can_play:
+		letter = input("Please choose a letter: ")
+		can_play, message = can_play_letter(letter)
+		print(message)
 	return letter
 
 def can_play_letter(letter):
-	# vérifie que la lettre est bien une lettre
-	# vérifie que la lettre n'a pas déjà été jouée
-	# return true ou false
 	if not letter.isalpha():
-		print("This is not a playable character")
-		return False
-	elif letter in false_letters or letter in found_letters:
-		print("You've already played this letter")
-		return False
+		message = "This is not a playable character"
+		return False, message
+	elif letter in data.false_letters or letter in data.found_letters:
+		message = "You've already played this letter"
+		return False, message
 	else:
-		return True
+		message = "Let's go"
+		return True, message
 
 def print_false_letters():
-	# affiche la liste des lettres_fausses
-	print(false_letters)
+	print(data.false_letters)
 
-def send_letter_good_false(letter, boolean):
-	# envoie la lettre dans la liste bonne ou dans la liste fausse
-	if boolean:
-		found_letters.append(letter)
+def send_letter_good_false(letter_booelan):
+	if letter_booelan[1]:
+		data.found_letters.append(letter_booelan[0])
 	else:
-		found_letters.append(letter)
+		data.false_letters.append(letter_booelan[0])
+
+# Validated
+def save_letter(letter):
+	send_letter_good_false(letter_check(letter))
 
 
 #def nom_joueur():
