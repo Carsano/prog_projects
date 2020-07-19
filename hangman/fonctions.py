@@ -27,7 +27,7 @@ def ask_letter():
 		letter = input("Please choose a letter: ")
 		can_play, message = can_play_letter(letter)
 		print(message)
-	return letter
+	save_letter(letter)
 
 def can_play_letter(letter):
 	if not letter.isalpha():
@@ -42,6 +42,9 @@ def can_play_letter(letter):
 
 def print_false_letters():
 	print(data.false_letters)
+
+def print_found_letters():
+	print(data.found_letters)
 
 def send_letter_good_false(letter_booelan):
 	if letter_booelan[1]:
@@ -77,3 +80,5 @@ def lose_life(lives):
 
 
 word_validation(generation_word())
+ask_letter()
+print_false_letters()
