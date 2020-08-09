@@ -17,9 +17,17 @@ def word_validation(word):
 
 def letter_check(letter):
 	if letter in data.word_to_find:
+		find_place_letter(letter)
 		return letter, True
 	else:
 		return letter, False
+
+def find_place_letter(letter):
+	places = []
+	for index,l in enumerate(data.word_to_find):
+		if letter == l:
+			places.append(index)
+	return places
 
 def ask_letter():
 	can_play = False
@@ -71,6 +79,7 @@ def lose_life():
 
 
 #def tour():
+
 	# joue un tour de pendu
 	# affiche le mot caché
 	# demande au joueur de taper une lettre
