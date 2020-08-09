@@ -4,6 +4,7 @@
 import fonctions
 
 def game():
+	fonctions.player_name()
 	fonctions.word_validation(fonctions.generation_word())
 	end_game=False
 	while end_game==False:

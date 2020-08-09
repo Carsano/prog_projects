@@ -84,10 +84,10 @@ def after_end_game():
 		return "You lost all your lives"
 	elif check_word_find()== True:
 		return 'You found the word : "{}"'.format(data.word_to_print)
-# Validated
 
-#def nom_joueur():
-	# demande le nom du joueur 
+def player_name():
+	name = input("Veuillez rentrer le nom du joueur : ")
+
 	# enregistre ce nom dans donnes
 
 #def enregistrer_score():
