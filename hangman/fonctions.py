@@ -60,7 +60,7 @@ def update_word_to_print(list_letter):
 		word_buffer[index]=data.word_to_find[index]
 	data.word_to_print="".join(word_buffer)
 
-def check_word_find:
+def check_word_find():
 	if data.word_to_print == data.word_to_find:
 		return True
 
@@ -77,7 +77,7 @@ def send_letter_good_false(letter_boolean):
 def save_letter(letter):
 	send_letter_good_false(letter_check(letter))
 
-def end_game:
+def end_game():
 	if data.lives==0:
 		return "Lost!"
 	elif check_word_find== True:
