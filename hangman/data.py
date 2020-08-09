@@ -4,7 +4,6 @@
 
 word_dictionnary = ["test"]
 lives=8
-score=0
 word_to_find='autre'
 word_to_print='*****'
 false_letters=[]
