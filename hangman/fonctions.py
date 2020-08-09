@@ -74,7 +74,7 @@ def save_letter(letter):
 def end_game():
 	if data.lives==0:
 		return True
-	elif check_word_find== True:
+	elif check_word_find()== True:
 		return True
 	else:
 		return False
@@ -82,8 +82,8 @@ def end_game():
 def after_end_game():
 	if data.lives==0:
 		return "You lost all your lives"
-	elif check_word_find== True:
-		return "You found the word!"
+	elif check_word_find()== True:
+		return 'You found the word : "{}"'.format(data.word_to_print)
 # Validated
 
 #def nom_joueur():
@@ -105,4 +105,3 @@ def tour():
 	print("Bad letters : ",data.false_letters)
 	print("Letters found : ",data.found_letters)
 	print("Lives : ", data.lives)
-
