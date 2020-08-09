@@ -70,6 +70,9 @@ def send_letter_good_false(letter_boolean):
 def save_letter(letter):
 	send_letter_good_false(letter_check(letter))
 
+def end_game:
+	if data.lives==0:
+		
 # Validated
 
 #def nom_joueur():
