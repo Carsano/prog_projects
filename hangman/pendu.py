@@ -6,6 +6,7 @@ import data
 
 def game():
 	fonctions.player_name()
+	print(fonctions.print_score())
 	fonctions.word_validation(fonctions.generation_word())
 	end_game=False
 	while end_game==False:
