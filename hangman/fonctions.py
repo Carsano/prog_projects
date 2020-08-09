@@ -2,7 +2,7 @@
 
 # -*-coding:UTF-8 -*
 import data
-
+import pickle
 
 import random
 
