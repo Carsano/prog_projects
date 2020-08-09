@@ -60,6 +60,10 @@ def update_word_to_print(list_letter):
 		word_buffer[index]=data.word_to_find[index]
 	data.word_to_print="".join(word_buffer)
 
+def check_word_find:
+	if data.word_to_print == data.word_to_find:
+		return True
+
 def send_letter_good_false(letter_boolean):
 	if letter_boolean[1]:
 		data.found_letters.append(letter_boolean[0])
@@ -72,7 +76,12 @@ def save_letter(letter):
 
 def end_game:
 	if data.lives==0:
-		
+		return "Lost!"
+	elif check_word_find== True:
+		return "Won"
+	else
+		return 'Continue'
+
 # Validated
 
 #def nom_joueur():
