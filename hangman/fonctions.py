@@ -68,8 +68,11 @@ def send_letter_good_false(letter_boolean):
 	if letter_boolean[1]:
 		data.found_letters.append(letter_boolean[0])
 		update_word_to_print(letter_boolean[2])
+		"Good guess"
 	else:
 		data.false_letters.append(letter_boolean[0])
+		lose_life()
+		'Bad guess'
 
 def save_letter(letter):
 	send_letter_good_false(letter_check(letter))
@@ -95,10 +98,12 @@ def end_game:
 def lose_life():
 	data.lives -= 1
 	return data.lives
+	print(send_letter_good_false)
 
-
-#def tour():
-
+def tour():
+	print(data.word_to_find)
+	print(ask_letter())
+	print("Bad letters : ",print_false_letters())
 	# joue un tour de pendu
 	# affiche le mot caché
 	# demande au joueur de taper une lettre
@@ -108,5 +113,4 @@ def lose_life():
 
 
 word_validation(generation_word())
-ask_letter()
-print_false_letters()
+tour()
