@@ -73,12 +73,17 @@ def save_letter(letter):
 
 def end_game():
 	if data.lives==0:
-		return "Lost!"
+		return True
 	elif check_word_find== True:
-		return "Won"
+		return True
 	else:
-		return "Continue"
+		return False
 
+def after_end_game:
+	if data.lives==0:
+		return "You lost all your lives"
+	elif check_word_find== True:
+		return "You found the word!"
 # Validated
 
 #def nom_joueur():
