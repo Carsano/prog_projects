@@ -77,7 +77,7 @@ def end_game():
 	elif check_word_find== True:
 		return "Won"
 	else:
-		return 'Continue'
+		return "Continue"
 
 # Validated
 
@@ -100,13 +100,6 @@ def tour():
 	print("Bad letters : ",data.false_letters)
 	print("Letters found : ",data.found_letters)
 	print("Lives : ", data.lives)
-	# joue un tour de pendu
-	# affiche le mot caché
-	# demande au joueur de taper une lettre
-	# vérifie la lettre
-	# affiche si le joueur a trouvé une lettre ou pas
-	# enlève une vie si besoin
-
 
 word_validation(generation_word())
 tour()
