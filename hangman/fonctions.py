@@ -54,12 +54,16 @@ def print_false_letters():
 def print_found_letters():
 	print(data.found_letters)
 
-def print_part_word(list_letter):
+def update_word_to_print(list_letter):
+	word_buffer =list(data.word_to_print)
+	for index in list_letter:
+		word_buffer[index]=data.word_to_find[index]
+	data.word_to_print="".join(word_buffer)
 
 def send_letter_good_false(letter_boolean):
 	if letter_boolean[1]:
 		data.found_letters.append(letter_boolean[0])
-		print_part_word(letter_boolean[2])
+		update_word_to_print(letter_boolean[2])
 	else:
 		data.false_letters.append(letter_boolean[0])
 
