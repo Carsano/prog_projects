@@ -79,7 +79,7 @@ def end_game():
 	else:
 		return False
 
-def after_end_game:
+def after_end_game():
 	if data.lives==0:
 		return "You lost all your lives"
 	elif check_word_find== True:
