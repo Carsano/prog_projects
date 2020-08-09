@@ -6,7 +6,8 @@ import data
 
 def game():
 	fonctions.player_name()
-	print(fonctions.print_score())
+	scores = fonctions.score_begin_game()
+	print("Score : ",scores[data.player_name])
 	fonctions.word_validation(fonctions.generation_word())
 	end_game=False
 	while end_game==False:
@@ -14,6 +15,7 @@ def game():
 		end_game=fonctions.end_game()
 	print(fonctions.after_end_game())
 	if fonctions.check_word_find()==True:
-		fonctions.save_score(data.player_name,data.lives)
+		scores[data.player_name] += data.lives
+		fonctions.save_score(scores)
 
 game()

@@ -4,7 +4,7 @@
 import data
 import pickle
 import random
-from functools import reduce
+import os
 
 
 def generation_word():
@@ -88,19 +88,22 @@ def after_end_game():
 def player_name():
 	name = input("Veuillez rentrer le nom du joueur : ")
 	data.player_name = name
-def read_score_file():
-		with open('scores','r') as score_file:
-			results = pickle.Unpickler(score_file)
 
-def save_score(player, score):
-	with open('scores','w') as score_file:
-		result = read_score_file()
-		dict_buffer = [result,{player : score}]
-		if result== None:
-			final_results={player : score}
-		else:
-			final_results = reduce(lambda x, y: dict((k, v + y[k]) for k, v in x.iteritems()), dict_buffer)
-		pickle.Pickler(score_file).dump(final_results)
+def save_score(scores):
+	score_file = open('scores', "wb")
+	my_pickler = pickle.Pickler(score_file)
+	my_pickler.dump(scores)
+	score_file.close()
+
+def get_score():
+	if os.path.exists("scores"): 
+		score_file = open("scores", "rb")
+		my_unpickler = pickle.Unpickler(score_file)
+		scores = my_unpickler.load()
+		score_file.close()
+	else:
+		scores = {}
+	return scores
 
 def print_score():
 	with open('scores','r') as score_file:
@@ -112,6 +115,11 @@ def lose_life():
 	return data.lives
 	print(send_letter_good_false)
 
+def score_begin_game():
+	scores = get_score()
+	if data.player_name not in scores.keys():
+		scores[data.player_name] = 0
+	return scores
 def tour():
 	print(data.word_to_print)
 	ask_letter()
