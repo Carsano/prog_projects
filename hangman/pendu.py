@@ -4,9 +4,11 @@
 import fonctions
 
 def game():
-	fonctions.generation_words()
+	fonctions.word_validation(fonctions.generation_word())
 	end_game=False
 	while end_game==False:
 		fonctions.tour()
-		end_game=fonctions.end_game
+		end_game=fonctions.end_game()
 	print(fonctions.after_end_game)
+
+game()
