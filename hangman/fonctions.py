@@ -35,7 +35,7 @@ def ask_letter():
 		letter = input("Please choose a letter: ")
 		can_play, message = can_play_letter(letter)
 		print(message)
-	save_letter(letter)
+	save_letter(letter.lower())
 
 def can_play_letter(letter):
 	if not letter.isalpha():
