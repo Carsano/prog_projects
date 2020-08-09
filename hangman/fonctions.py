@@ -106,5 +106,3 @@ def tour():
 	print("Letters found : ",data.found_letters)
 	print("Lives : ", data.lives)
 
-word_validation(generation_word())
-tour()
