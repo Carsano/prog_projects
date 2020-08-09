@@ -48,12 +48,6 @@ def can_play_letter(letter):
 		message = "Let's go"
 		return True, message
 
-def print_false_letters():
-	print(data.false_letters)
-
-def print_found_letters():
-	print(data.found_letters)
-
 def update_word_to_print(list_letter):
 	word_buffer =list(data.word_to_print)
 	for index in list_letter:
@@ -68,11 +62,11 @@ def send_letter_good_false(letter_boolean):
 	if letter_boolean[1]:
 		data.found_letters.append(letter_boolean[0])
 		update_word_to_print(letter_boolean[2])
-		"Good guess"
+		print("Good guess")
 	else:
 		data.false_letters.append(letter_boolean[0])
 		lose_life()
-		'Bad guess'
+		print('Bad guess')
 
 def save_letter(letter):
 	send_letter_good_false(letter_check(letter))
@@ -82,7 +76,7 @@ def end_game():
 		return "Lost!"
 	elif check_word_find== True:
 		return "Won"
-	else
+	else:
 		return 'Continue'
 
 # Validated
@@ -101,9 +95,10 @@ def lose_life():
 	print(send_letter_good_false)
 
 def tour():
-	print(data.word_to_find)
-	print(ask_letter())
-	print("Bad letters : ",print_false_letters())
+	print(data.word_to_print)
+	ask_letter()
+	print("Bad letters : ",data.false_letters)
+	print("Letters found : ",data.found_letters)
 	# joue un tour de pendu
 	# affiche le mot caché
 	# demande au joueur de taper une lettre
