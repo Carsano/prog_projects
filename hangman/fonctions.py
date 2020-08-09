@@ -6,6 +6,11 @@ import pickle
 import random
 import os
 
+def introduction():
+	scores = get_score()
+	print("Welcome to the hangman game\n","If scores have already been saved you can find them here : \n",)
+	for x,y in scores.items():
+		print("{} : {}".format(x,y))
 
 def generation_word():
 	word = random.choice(data.word_dictionnary)

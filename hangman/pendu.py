@@ -5,9 +5,9 @@ import fonctions
 import data
 
 def game():
+	fonctions.introduction()
 	fonctions.player_name()
 	scores = fonctions.score_begin_game()
-	print("Score : ",scores[data.player_name])
 	fonctions.word_validation(fonctions.generation_word())
 	end_game=False
 	while end_game==False:
