@@ -7,11 +7,19 @@ import random
 import os
 
 def introduction():
+	initialize_data()
 	scores = get_score()
 	print("Welcome to the hangman game\n","If scores have already been saved you can find them here : \n",)
 	for x,y in scores.items():
 		print("{} : {}".format(x,y))
 
+def initialize_data():
+	data.lives=8
+	data.word_to_find='autre'
+	data.word_to_print='*****'
+	data.false_letters=[]
+	data.found_letters=[]
+	
 def generation_word():
 	word = random.choice(data.word_dictionnary)
 	return word
@@ -94,7 +102,7 @@ def after_end_game():
 		return 'You found the word : "{}"'.format(data.word_to_print)
 
 def player_name():
-	name = input("Veuillez rentrer le nom du joueur : ")
+	name = input("Please enter the player's name : ")
 	data.player_name = name
 
 def save_score(scores):
@@ -128,7 +136,9 @@ def score_begin_game():
 	if data.player_name not in scores.keys():
 		scores[data.player_name] = 0
 	return scores
+
 def tour():
+	print("\n\n\n########################\n\n\n")
 	print(data.word_to_print)
 	ask_letter()
 	print("Bad letters : ",data.false_letters)

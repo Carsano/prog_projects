@@ -4,7 +4,7 @@
 import fonctions
 import data
 
-def game():
+def play():
 	fonctions.introduction()
 	fonctions.player_name()
 	scores = fonctions.score_begin_game()
@@ -17,5 +17,19 @@ def game():
 	if fonctions.check_word_find()==True:
 		scores[data.player_name] += data.lives
 		fonctions.save_score(scores)
+
+def game():
+	play()
+	print("Now you have several options : \n")
+	print("- You can quit by entering 'q' \n")
+	print("- You can play again by entering 'r' \n")
+	option = input("Enter your choice : ")
+	while not ord(option.lower()) in [113,114]:
+		print("Bad entry")
+		option = input("Enter your choice : ")
+	if option == "r":
+		game()
+	else:
+		print("Thanks! Bye bye")
 
 game()
