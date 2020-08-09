@@ -3,8 +3,8 @@
 # -*-coding:UTF-8 -*
 import data
 import pickle
-
 import random
+from functools import reduce
 
 
 def generation_word():
@@ -87,8 +87,20 @@ def after_end_game():
 
 def player_name():
 	name = input("Veuillez rentrer le nom du joueur : ")
+	data.player_name = name
+def read_score_file():
+		with open('scores','rb') as score_file:
+			results = pickle.Unpickler(score_file)
 
-	# enregistre ce nom dans donnes
+def save_score(player, score):
+	with open('scores','wb') as score_file:
+		result = read_score_file()
+		dict_buffer = [result,{player : score}]
+		if result== None:
+			final_results={player : score}
+		else:
+			final_results = reduce(lambda x, y: dict((k, v + y[k]) for k, v in x.iteritems()), dict_buffer)
+		pickle.Pickler(score_file).dump(final_results)
 
 #def enregistrer_score():
 	# ouvre ou crée fichier scores

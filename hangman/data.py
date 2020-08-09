@@ -9,3 +9,4 @@ word_to_find='autre'
 word_to_print='*****'
 false_letters=[]
 found_letters=[]
+player_name=''
