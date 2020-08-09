@@ -13,12 +13,12 @@ def generation_word():
 
 def word_validation(word):
 	data.word_to_find = word
+	data.word_to_print = len(word)*"*"
 
 
 def letter_check(letter):
 	if letter in data.word_to_find:
-		find_place_letter(letter)
-		return letter, True
+		return letter, True, find_place_letter(letter)
 	else:
 		return letter, False
 
@@ -54,11 +54,14 @@ def print_false_letters():
 def print_found_letters():
 	print(data.found_letters)
 
-def send_letter_good_false(letter_booelan):
-	if letter_booelan[1]:
-		data.found_letters.append(letter_booelan[0])
+def print_part_word(list_letter):
+
+def send_letter_good_false(letter_boolean):
+	if letter_boolean[1]:
+		data.found_letters.append(letter_boolean[0])
+		print_part_word(letter_boolean[2])
 	else:
-		data.false_letters.append(letter_booelan[0])
+		data.false_letters.append(letter_boolean[0])
 
 def save_letter(letter):
 	send_letter_good_false(letter_check(letter))
