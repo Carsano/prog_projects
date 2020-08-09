@@ -99,6 +99,7 @@ def tour():
 	ask_letter()
 	print("Bad letters : ",data.false_letters)
 	print("Letters found : ",data.found_letters)
+	print("Lives : ", data.lives)
 	# joue un tour de pendu
 	# affiche le mot caché
 	# demande au joueur de taper une lettre
