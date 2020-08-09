@@ -44,6 +44,9 @@ def can_play_letter(letter):
 	elif letter in data.false_letters or letter in data.found_letters:
 		message = "You've already played this letter"
 		return False, message
+	elif len(letter)!=1:
+		message = "You can play only 1 letter at a time"
+		return False, message
 	else:
 		message = "Let's go"
 		return True, message
